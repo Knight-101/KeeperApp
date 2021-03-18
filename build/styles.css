@@ -47,6 +47,8 @@ footer p {
 .note h1 {
   font-size: 1.1em;
   margin-bottom: 6px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 .note p {
   font-size: 1.1em;
@@ -86,7 +88,7 @@ form textarea {
   font-family: inherit;
   resize: none;
 }
-form button {
+#add {
   position: absolute;
   right: 18px;
   bottom: -18px;
@@ -99,4 +101,23 @@ form button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+}
+
+button:hover{
+    transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s, 0s, 0s;
+    background-color: #cca332!important;
+
+}
+#logout {
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+
 }

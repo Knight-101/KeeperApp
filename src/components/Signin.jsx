@@ -6,7 +6,6 @@ import {useHistory} from "react-router-dom"
 import { BASE_URL } from "../backend";
 
 function Signin(props){
-    const [id,setId]=useState("")
     const [fail,setfail]=useState("")
     const [userData, setData] = useState({
         email: "",
@@ -27,6 +26,7 @@ function Signin(props){
       axios.post(BASE_URL+'signin',userData)
       .then((res)=> {
         localStorage.setItem('token',res.data);
+        localStorage.getItem('token')===res.data && setfail("Email or Password does not match our records")
         history.push("/notes")
         
       })

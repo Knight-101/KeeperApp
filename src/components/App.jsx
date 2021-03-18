@@ -4,7 +4,6 @@ import Signin from "./Signin";
 import Register from "./Register"
 import Home from "./Home"
 import Notes from "./Notes"
-import axios from "axios";
 
 
 function App() {

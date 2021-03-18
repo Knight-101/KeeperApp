@@ -4,11 +4,10 @@ import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
 import axios from "axios";
-import backend, { BASE_URL } from "../backend";
+import { BASE_URL } from "../backend";
 
 
 function Notes() {
-    const [initial,setInitial]=useState("")
     const [auth,setauth]=useState(true)
     const [note, setNote] = useState({
         title:"",
@@ -68,7 +67,7 @@ function Notes() {
       useEffect(() => { 
        axios.get(BASE_URL+'notes',{headers:{'Authorization':localStorage.getItem('token')}})
       .then((res)=> {  
-      console.log(res)  
+      res?setauth(true):setauth(false)   
       setNoteArray(res.data.notes)
     })
       .catch((error)=> {
