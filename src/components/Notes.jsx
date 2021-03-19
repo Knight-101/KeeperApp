@@ -25,16 +25,10 @@ function Notes() {
       }
     
       function addNote(){
-        console.log({
-          id:localStorage.getItem("id"),
-          notes:[...noteArray,note]
-        })
         axios.post(BASE_URL+'notes',{
-          // id:localStorage.getItem("id"),
           notes:[...noteArray,note]
 
         },{headers:{'Authorization':localStorage.getItem('token')}}).then((res)=> {  
-           console.log(res)
            setNoteArray(prevArray => {
             return [...prevArray,note]
           })
@@ -60,7 +54,7 @@ function Notes() {
       }
       function logOut(){
         localStorage.setItem("token","")
-        localStorage.setItem("id","")
+        localStorage.setItem("token",false)
         window.location = "/"
       }
       
@@ -90,7 +84,7 @@ function Notes() {
             funcChange={changeNote}
             // post={postData}
           />
-          {noteArray.length>0 && noteArray.map((item,index) => {
+          {noteArray.map((item,index) => {
             return <Note key={index} id={index} title={item.title} content={item.content} funcDel={deleteItem} />
           })} 
           <Footer />

@@ -1,5 +1,5 @@
 // import axios from "axios"
-export const BASE_URL = "https://git.heroku.com/dry-basin-38726.git";
+export const BASE_URL = "https://dry-basin-38726.herokuapp.com/";
 
 
 // const backend = axios.create({

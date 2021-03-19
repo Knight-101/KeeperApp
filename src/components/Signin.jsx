@@ -25,9 +25,12 @@ function Signin(props){
       
       axios.post(BASE_URL+'signin',userData)
       .then((res)=> {
-        localStorage.setItem('token',res.data);
-        localStorage.getItem('token')===res.data && setfail("Email or Password does not match our records")
-        history.push("/notes")
+        if(res.data==="invalid password"){
+          setfail("Email or Password does not match our records")
+        }else{
+          localStorage.setItem('token',res.data);
+          history.push("/notes");
+        }
         
       })
       .catch((error)=> {
