@@ -25,18 +25,23 @@ function Signin(props){
       
       axios.post(BASE_URL+'signin',userData)
       .then((res)=> {
-        if(res.data==="Email doesn't match our records"){
-          setfail("Email or Password does not match our records")
-        }
-        if(res.data==="invalid password"){
-          setfail("Email or Password does not match our records")
-        }
         if(res.data==='"email" must be a valid email'){
           setfail("Enter a valid email(abc@def.xy)")
         }else{
-          localStorage.setItem('token',res.data);
-          history.push("/notes");
-        }       
+          if(res.data==="Email doesn't match our records"){
+            setfail("Email or Password does not match our records")
+          }else{
+            if(res.data==="invalid password"){
+              setfail("Email or Password does not match our records")
+            }else{
+              localStorage.setItem('token',res.data);
+              history.push("/notes");
+            }       
+          }
+        }
+        
+        
+        
           
     
         
