@@ -12,9 +12,7 @@ function App() {
   return (
     <Router>
     <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
+      
       <Route path="/register">
         <Register />
       </Route>
@@ -23,6 +21,9 @@ function App() {
       </Route>
       <Route path="/notes">
         <Notes />
+      </Route>
+      <Route exact path="/">
+        <Home />
       </Route>
     </Switch>
   </Router>  
