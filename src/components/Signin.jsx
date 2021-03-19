@@ -40,7 +40,6 @@ function Signin(props){
     return(
         <div>
         <Header />
-        {/* <User _id={id} /> */}
         <main class="form-signin" >
     <form style={{lineHeight: '5rem'}}>
         <h1 class="h3 mb-3 fw-normal" style={{textAlign: 'center',fontSize:"2.3rem"}}>Sign In</h1>
